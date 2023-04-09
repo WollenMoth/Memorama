@@ -10,7 +10,7 @@ def get_sprites(
     directory: str,
     size: Coordinate,
     scale: Coordinate
-) -> tuple[pygame.Surface, ...]:
+) -> list[pygame.Surface]:
     """Obtiene los sprites de un sprite sheet"""
     image = listdir(directory)[0]
     path = join(directory, image)
@@ -25,4 +25,4 @@ def get_sprites(
             surface.blit(sprite_sheet, (0, 0), rect)
             sprites.append(pygame.transform.scale(surface, scale))
 
-    return tuple(sprites)
+    return sprites
